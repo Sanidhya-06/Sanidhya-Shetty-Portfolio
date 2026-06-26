@@ -6,9 +6,7 @@ export const projects = [
     stack: ["Flutter", "Firebase"],
     date: "Jan 2026",
     images: [
-      "/images/techrush.jpg",
-      "/images/techrush2.jpg",
-      "/images/techrush3.jpg",
+      "/images/ecolife.mp4",
     ],
     badge: "🥇 TechRush 1st Place",
     description: `Diagnosed a retention gap in existing environmental apps — 
@@ -49,7 +47,7 @@ at 15 FPS on CPU with zero cloud dependency.`,
     subtitle: "Interactive Front-End Experiment",
     stack: ["HTML", "CSS", "JavaScript"],
     date: "Nov 2025",
-    images: ["/images/gdg.png"],
+    images: ["/images/museum-of-useless-details.mp4"],
     badge: null,
     description: `A UX hypothesis in interactive form: facts retain better 
 through interaction than static text.

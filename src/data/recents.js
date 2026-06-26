@@ -27,7 +27,7 @@ startup ecosystems, product building, and investor pitching.`,
       tagColor: "#B07A50",
       org: "IIT Delhi · Entrepreneurship Development Cell",
       role: "Fintech Track",
-      images: ["/images/nirman.jpg"],
+      images: ["/images/edc.png", "/images/edc2.png"],
       description: `Selected as one of Maharashtra's Top 8 teams in the Fintech Track 
 at IIT Delhi's flagship entrepreneurship event — Blueprint 6.0.
 

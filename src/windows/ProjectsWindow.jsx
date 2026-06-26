@@ -1,14 +1,25 @@
 import { useState } from "react"
 import { projects } from "../data/projects"
 import { useSelectionStore } from "../store/selectionStore"
+import { useWindowStore } from "../store/useWindowStore"
+import { PROJECT_PREVIEW_CONFIGS } from "./windowRegistry"
 
 export default function ProjectsWindow() {
   const { selectedProjectId, selectProject } = useSelectionStore()
+  const { openWindow, closeWindow } = useWindowStore()
   const [selected, setSelected] = useState(selectedProjectId)
 
   const handleSelect = (id) => {
     setSelected(id)
     selectProject(id)
+
+    if (id === "ecolife") {
+      closeWindow(PROJECT_PREVIEW_CONFIGS.horizontal.id)
+      openWindow(PROJECT_PREVIEW_CONFIGS.vertical)
+    } else {
+      closeWindow(PROJECT_PREVIEW_CONFIGS.vertical.id)
+      openWindow(PROJECT_PREVIEW_CONFIGS.horizontal)
+    }
   }
   const project = projects.find((p) => p.id === selected)
 

@@ -1,12 +1,22 @@
 import { useSelectionStore } from "../store/selectionStore"
+import { useWindowStore } from "../store/useWindowStore"
 import { recents } from "../data/recents"
+import { FULL_PREVIEW_CONFIG } from "./windowRegistry"
 
 const allRecents = [...recents[2026], ...recents[2025]]
 
 export default function RecentsPreviewWindow() {
-  const { selectedRecentId } = useSelectionStore()
+  const { selectedRecentId, selectPreviewMedia } = useSelectionStore()
+  const { openWindow, updateWindowTitle } = useWindowStore()
   const item = allRecents.find((recent) => recent.id === selectedRecentId)
   const images = item?.images?.slice(0, 3) ?? []
+
+  const openFullPreview = (image, index) => {
+    const title = `${item.title} preview ${index + 1}`
+    selectPreviewMedia({ src: image, alt: title })
+    openWindow({ ...FULL_PREVIEW_CONFIG, title })
+    updateWindowTitle(FULL_PREVIEW_CONFIG.id, title)
+  }
 
   if (!images.length) {
     return (
@@ -28,13 +38,20 @@ export default function RecentsPreviewWindow() {
         }}
       >
         {images.map((image, index) => (
-          <img
+          <button
             key={image}
-            src={image}
-            alt={`${item.title} preview ${index + 1}`}
-            className="w-full h-full rounded-lg object-cover min-h-0"
+            type="button"
+            aria-label={`Open ${item.title} preview ${index + 1}`}
+            className="w-full h-full rounded-lg min-h-0 overflow-hidden cursor-pointer"
             style={images.length === 3 && index === 0 ? { gridRow: "span 2" } : undefined}
-          />
+            onClick={() => openFullPreview(image, index)}
+          >
+            <img
+              src={image}
+              alt={`${item.title} preview ${index + 1}`}
+              className="h-full w-full rounded-lg object-cover"
+            />
+          </button>
         ))}
       </div>
       <p style={{ fontSize: "11px", color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}>

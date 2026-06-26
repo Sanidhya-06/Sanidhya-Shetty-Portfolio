@@ -5,6 +5,7 @@ const SelectionContext = createContext(null)
 export function SelectionProvider({ children }) {
   const [selectedProjectId, setSelectedProjectId] = useState("ecolife")
   const [selectedRecentId, setSelectedRecentId] = useState("iit-roorkee")
+  const [selectedPreviewMedia, setSelectedPreviewMedia] = useState(null)
 
   const value = useMemo(
     () => ({
@@ -12,8 +13,10 @@ export function SelectionProvider({ children }) {
       selectProject: setSelectedProjectId,
       selectedRecentId,
       selectRecent: setSelectedRecentId,
+      selectedPreviewMedia,
+      selectPreviewMedia: setSelectedPreviewMedia,
     }),
-    [selectedProjectId, selectedRecentId],
+    [selectedProjectId, selectedRecentId, selectedPreviewMedia],
   )
 
   return (

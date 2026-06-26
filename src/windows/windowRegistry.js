@@ -1,6 +1,37 @@
 // Central registry: maps folder ID → window config(s) to open
 // Arrays mean multiple windows spawn simultaneously
 
+export const PROJECT_PREVIEW_CONFIGS = {
+  vertical: {
+    id: "projects-preview-vertical",
+    title: "ecolife.mp4",
+    component: "ProjectsPreviewVertical",
+    x: 760,
+    y: 100,
+    width: 288,
+    height: 512,
+  },
+  horizontal: {
+    id: "projects-preview-horizontal",
+    title: "preview.png",
+    component: "ProjectsPreviewHorizontal",
+    x: 760,
+    y: 120,
+    width: 560,
+    height: 340,
+  },
+}
+
+export const FULL_PREVIEW_CONFIG = {
+  id: "full-preview",
+  title: "Preview",
+  component: "FullPreview",
+  x: 260,
+  y: 70,
+  width: 760,
+  height: 520,
+}
+
 export const WINDOW_CONFIGS = {
   about: [
     {
@@ -43,15 +74,7 @@ export const WINDOW_CONFIGS = {
       width: 560,
       height: 380,
     },
-    { 
-      id: "projects-preview", 
-      title: "preview.png", 
-      component: "ProjectsPreview", 
-      x: 760, 
-      y: 100, 
-      width: 280, 
-      height: 240 
-    },
+    PROJECT_PREVIEW_CONFIGS.vertical,
   ],
 
   recents: [

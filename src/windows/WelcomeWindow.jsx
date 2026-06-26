@@ -1,20 +1,24 @@
 export default function WelcomeWindow() {
   return (
     <div
-      className="flex flex-col items-center justify-center h-full px-8 py-6"
+      className="flex flex-col items-center h-full px-8"
       style={{ background: "transparent" }}
     >
-      <p
-        className="font-handwritten text-center leading-none mb-4"
-        style={{
-          fontSize: "72px",
-          color: "var(--charcoal)",
-          fontWeight: 700,
-          letterSpacing: "-1px",
-        }}
-      >
-        portfolio
-      </p>
+      <div className="flex flex-1 items-center justify-center">
+        <p
+          className="text-center leading-none"
+          style={{
+            fontFamily: '"Homemade Apple", cursive',
+            fontSize: "72px",
+            color: "var(--charcoal)",
+            fontWeight: 400,
+            letterSpacing: 0,
+            paddingLeft: "16px",
+          }}
+        >
+          Portfolio
+        </p>
+      </div>
       <p
         className="text-center"
         style={{
@@ -22,6 +26,7 @@ export default function WelcomeWindow() {
           fontSize: "12px",
           color: "var(--text-muted)",
           letterSpacing: "0.04em",
+          marginBottom: "16px",
         }}
       >
         it's a desktop. explore yourself.

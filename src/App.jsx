@@ -17,6 +17,7 @@ import TrashWindow from "./windows/TrashWindow"
 import MePreviewWindow from "./windows/AboutPreviewWindow"
 import ProjectsPreviewWindow from "./windows/ProjectsPreviewWindow"
 import RecentsPreviewWindow from "./windows/RecentsPreviewWindow"
+import FullPreviewWindow from "./windows/FullPreviewWindow"
 
 const CONTENT_MAP = {
   Welcome: WelcomeWindow,
@@ -27,8 +28,10 @@ const CONTENT_MAP = {
   Resume: ResumeWindow,
   Trash: TrashWindow,
   MePreview: MePreviewWindow,
-  ProjectsPreview: ProjectsPreviewWindow,
+  ProjectsPreviewVertical: () => <ProjectsPreviewWindow layout="vertical" />,
+  ProjectsPreviewHorizontal: () => <ProjectsPreviewWindow layout="horizontal" />,
   RecentsPreview: RecentsPreviewWindow,
+  FullPreview: FullPreviewWindow,
 }
 
 function PortfolioOS() {
