@@ -85,11 +85,13 @@ That's what made the experience worth it.`,
       org: "MGM College of Engineering & Technology",
       role: null,
       images: ["/images/ieee1.png", "/images/ieee2.png"],
-      description: `Secured second place in the college-level IEEE ideathon among 
-competing student teams at MGMCET.
+      description: `Secured 2nd Place in my college Ideathon after an unexpected turn of events.
 
-Internal competition run under the IEEE student chapter, evaluating 
-teams on problem framing, solution design, and presentation.`,
+Although I initially wanted to participate when the event was announced, but circumstances prevented me from registering early. Interestingly, just 10 minutes before the first round, my team came together, brainstormed an idea, and presented it. Despite the limited preparation time, we advanced to the final round.
+
+We were informed about the final round the night before, immediately after my examinations. With only a few hours available, we refined our solution, strengthened our pitch, and prepared our presentation before the competition.
+
+This experience reinforced the value of quick thinking, teamwork under pressure, and the ability to turn limited preparation time into a well-structured solution. Winning 2nd Place was a rewarding outcome and a reminder that adaptability and execution often matter just as much as planning.`,
     },
     
   ],
