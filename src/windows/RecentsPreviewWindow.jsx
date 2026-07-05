@@ -54,7 +54,7 @@ export default function RecentsPreviewWindow() {
           </button>
         ))}
       </div>
-      <p style={{ fontSize: "11px", color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}>
+      <p style={{ fontSize: "11px", color: "var(--text-muted)", fontFamily: "Inter, sans-serif", paddingLeft: "6px" }}>
         {item.title} · {item.date}
       </p>
     </div>

@@ -10,6 +10,7 @@ export default function Window({
   height,
   zIndex,
   isMinimized,
+  isActive = true,
   children,
 }) {
   const { closeWindow, minimizeWindow, focusWindow, moveWindow } = useWindowStore()
@@ -88,7 +89,7 @@ export default function Window({
 
   return (
     <div
-      className="window-glass window-enter absolute no-select"
+      className="window-glass window-enter absolute no-select transition-opacity duration-200"
       style={{
         left: clampedX,
         top: clampedY,
@@ -96,6 +97,8 @@ export default function Window({
         zIndex,
         minHeight: responsiveHeight,
         touchAction: "none",
+        opacity: isActive ? 1 : 0.6,
+        filter: isActive ? "brightness(1)" : "brightness(0.85)",
       }}
       onPointerDown={() => focusWindow(id)}
       ref={dragRef}

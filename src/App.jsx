@@ -37,6 +37,12 @@ const CONTENT_MAP = {
 function PortfolioOS() {
   const { windows } = useWindowStore()
 
+  // Find the group of the window with the highest zIndex
+  const topWindow = windows.reduce((max, win) => 
+    (!max || win.zIndex > max.zIndex) ? win : max
+  , null)
+  const topGroupId = topWindow?.groupId
+
   return (
     <div className="relative w-screen h-screen overflow-hidden">
       <MenuBar />
@@ -45,8 +51,9 @@ function PortfolioOS() {
         if (win.isMinimized) return null
         const ContentComponent = CONTENT_MAP[win.component]
         if (!ContentComponent) return null
+        const isActive = win.groupId === topGroupId
         return (
-          <WindowShell key={win.id} {...win}>
+          <WindowShell key={win.id} {...win} isActive={isActive}>
             <ContentComponent />
           </WindowShell>
         )

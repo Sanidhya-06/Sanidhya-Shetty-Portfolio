@@ -78,7 +78,7 @@ export default function ProjectsPreviewWindow({ layout = "horizontal" }) {
           )
         })}
       </div>
-      <p style={{ fontSize: "11px", color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}>
+      <p style={{ fontSize: "11px", color: "var(--text-muted)", fontFamily: "Inter, sans-serif", paddingLeft: "6px" }}>
         {project.name} · {project.date}
       </p>
     </div>

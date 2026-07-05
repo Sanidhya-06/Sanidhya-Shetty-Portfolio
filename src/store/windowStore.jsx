@@ -23,10 +23,12 @@ const initialWindows = [
     zIndex: 10,
     isMinimized: false,
     isOpen: true,
+    groupId: "welcome",
   },
 ]
 
 let zCounter = 20
+let activeGroupId = "welcome"
 
 function reducer(state, action) {
   switch (action.type) {
@@ -43,7 +45,7 @@ function reducer(state, action) {
       zCounter++
       return [
         ...state,
-        { ...action.payload, zIndex: zCounter, isOpen: true, isMinimized: false },
+        { ...action.payload, zIndex: zCounter, isOpen: true, isMinimized: false, groupId: action.groupId || "default" },
       ]
     }
     case "CLOSE_WINDOW":
@@ -54,6 +56,10 @@ function reducer(state, action) {
       )
     case "FOCUS_WINDOW": {
       zCounter++
+      const focusedWindow = state.find((w) => w.id === action.id)
+      if (focusedWindow) {
+        activeGroupId = focusedWindow.groupId
+      }
       return state.map((w) =>
         w.id === action.id ? { ...w, zIndex: zCounter } : w
       )
@@ -66,6 +72,12 @@ function reducer(state, action) {
       return state.map((w) =>
         w.id === action.id ? { ...w, title: action.title } : w
       )
+    case "CLOSE_ALL_WINDOWS":
+      return []
+    case "MINIMIZE_ALL_WINDOWS":
+      return state.map((w) => ({ ...w, isMinimized: true }))
+    case "BRING_ALL_TO_FRONT":
+      return state.map((w) => ({ ...w, isMinimized: false }))
     default:
       return state
   }
@@ -74,13 +86,13 @@ function reducer(state, action) {
 export function WindowProvider({ children }) {
   const [windows, dispatch] = useReducer(reducer, initialWindows)
 
-  const openWindow = useCallback((config) => {
-    dispatch({ type: "OPEN_WINDOW", payload: config })
+  const openWindow = useCallback((config, groupId) => {
+    dispatch({ type: "OPEN_WINDOW", payload: config, groupId })
   }, [])
 
-  const openWindows = useCallback((configs) => {
+  const openWindows = useCallback((configs, groupId) => {
     configs.forEach((config) => {
-      dispatch({ type: "OPEN_WINDOW", payload: config })
+      dispatch({ type: "OPEN_WINDOW", payload: config, groupId })
     })
   }, [])
 
@@ -104,10 +116,23 @@ export function WindowProvider({ children }) {
     dispatch({ type: "UPDATE_WINDOW_TITLE", id, title })
   }, [])
 
+  const closeAll = useCallback(() => {
+    dispatch({ type: "CLOSE_ALL_WINDOWS" })
+  }, [])
+
+  const minimizeAll = useCallback(() => {
+    dispatch({ type: "MINIMIZE_ALL_WINDOWS" })
+  }, [])
+
+  const bringAllToFront = useCallback(() => {
+    dispatch({ type: "BRING_ALL_TO_FRONT" })
+  }, [])
+
   return (
     <WindowContext.Provider
       value={{
         windows,
+        activeGroupId,
         openWindow,
         openWindows,
         closeWindow,
@@ -115,6 +140,9 @@ export function WindowProvider({ children }) {
         focusWindow,
         moveWindow,
         updateWindowTitle,
+        closeAll,
+        minimizeAll,
+        bringAllToFront,
       }}
     >
       {children}

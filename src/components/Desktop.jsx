@@ -17,9 +17,9 @@ export default function Desktop() {
     const config = WINDOW_CONFIGS[id]
     if (!config) return
     if (Array.isArray(config)) {
-      openWindows(config)
+      openWindows(config, id)
     } else {
-      openWindow(config)
+      openWindow(config, id)
     }
   }
 
