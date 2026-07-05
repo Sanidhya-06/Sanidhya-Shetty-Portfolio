@@ -78,6 +78,7 @@ export default function MenuBar() {
                 WebkitBackdropFilter: "blur(20px) saturate(1.4)",
                 border: "1px solid var(--border)",
                 boxShadow: "0 8px 32px rgba(44, 44, 44, 0.12), 0 2px 8px rgba(44, 44, 44, 0.08)",
+                paddingLeft: "4px",
                 zIndex: 9999,
               }}
             >
