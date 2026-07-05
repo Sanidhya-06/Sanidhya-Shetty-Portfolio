@@ -1,11 +1,10 @@
 export const about = {
   name: "Sanidhya Shetty",
   tagline: "CSE-AIML · Builder · Designer · PM in training",
-  bio: `Hello I am Sanidhya, a 20 year old student-athlete from Mumbai studying Computer Science and Engineering with AIML Specialization.
-  Along the way, I've explored software development, AI, design, product thinking, and entrepreneurship. 
-  I've spent time participating in hackathons, ideathons, startup competitions, and personal projects. Some ideas worked, many didn't, and a few taught me lessons I couldn't have learned from a classroom. 
-  Those experiences made me realize that I enjoy the process of building and creating.
-  This space is a collection of that journey. You'll find experiments, side projects, half-finished ideas, and things I'm still improving.`,
+  bio: `I'm Sanidhya, a Computer Science and Engineering student specializing in AI/ML, currently based in Mumbai. Alongside my coursework, I work across software development, product thinking, and applied machine learning, building projects that sit somewhere between those three areas.
+  Most of that experience comes from hackathons, ideathons, and startup competitions, along with some personal projects. Some went well. Several didn't. What I've taken from both outcomes is a working sense of how to build things, tested more by repetition than by any single success.
+I'm currently weighing product management, software development, and machine learning as next steps, and treating this stage as time to test each one properly before choosing.
+`,
   email: "sanidhya354@gmail.com",
   github: "https://github.com/Sanidhya-06",
   linkedin: "https://www.linkedin.com/in/sanidhyashetty/?skipRedirect=true",
@@ -15,5 +14,4 @@ export const about = {
     Design: ["Figma", "Canva", "Wireframing", "Prototyping"],
     Tools: ["Git", "Notion", "SQL", "MS Excel"],
   },
-  sports: "University Basketball Team — MGM College",
 }
