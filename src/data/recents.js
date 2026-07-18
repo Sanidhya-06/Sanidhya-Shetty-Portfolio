@@ -9,7 +9,7 @@ export const recents = {
       tagColor: "#D4858A",
       org: "IIT Roorkee",
       role: null,
-      images: ["/images/roorkee1.png", "/images/roorkee2.png"],
+      images: ["/images/certificateofgeneralchampionship.png", "/images/roorkee2.png"],
       description: `Back in February, I had the opportunity to represent my college in the General Championship at E-Summit, IIT Roorkee. It was one of those experiences that 
       teaches you more in three days than weeks of lectures ever could.
 
