@@ -1,18 +1,27 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive portfolio built as a desktop — explore folders, drag windows, and click through projects the way you'd navigate your own laptop.
 
-Currently, two official plugins are available:
+🔗 Live: [sanidhyashetty.vercel.app](https://sanidhyashetty.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Built with
 
-## React Compiler
+React, Vite, Tailwind CSS, Zustand
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## ⚠️ Usage Notice
 
-Note: This will impact Vite dev & build performances.
+This project is shared publicly for viewing and reference purposes only. Please do **NOT**:
 
-## Expanding the ESLint configuration
+- Clone or replicate the full website or design
+- Repost it with minor content changes
+- Use this project for commercial or client work
+- Republish this project as your own
+- Create tutorials or content using this exact project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If you use parts of the code, you must provide proper credit, linking back to this repository.
+
+For any other use, please reach out first.
+
+## Contact
+
+- Email: sanidhya354@gmail.com
